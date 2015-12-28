@@ -1,2 +1,62 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+- @posts.each do |post|
+  .col-md-6.col-md-offset-3
+    .box.panel.panel-default
+      .panel-heading#avatar
+        = image_tag post.user.avatar(:thumb)
+        '
+        b
+          - if post.user.username?
+            = link_to post.user.username
+          - else
+            = link_to post.user.email
+        .pull-right
+          = time_ago_in_words(post.created_at, { include_seconds: true })
+          |  ago
+      .panel-body
+        p = link_to image_tag(post.image(:medium)), post
+        p.btn-group
+          - if user_signed_in?
+            - if current_user.liked? post
+              = link_to unlike_post_path(post), method: :delete, class: 'btn btn-default' do
+                  span.glyphicon.glyphicon-heart
+            - else
+              = link_to like_post_path(post), method: :put, class: 'btn btn-default' do
+                  span.glyphicon.glyphicon-heart-empty
+          - else
+            = link_to like_post_path(post), method: :put, class: 'btn btn-default' do
+                  span.glyphicon.glyphicon-heart-empty
+
+          = link_to new_post_comment_path(post), class: 'btn btn-default' do
+              span.glyphicon.glyphicon-comment
+
+          = link_to '#', class: 'btn btn-default' do
+              span.glyphicon.glyphicon-share-alt
+        .btn-group.pull-right
+          = link_to '#', class: 'btn btn-default' do
+              span.glyphicon.glyphicon-option-vertical
+        hr
+        p
+          i.glyphicon.glyphicon-heart
+          '
+          = pluralize post.get_upvotes.size, "like"
+        p
+          strong
+            - if post.user.username?
+              = link_to post.user.username
+            - else
+              = link_to post.user.email
+          '
+          = post.comment
+
+          - if post.comments
+            - post.comments.each do |comment|
+              p
+                strong
+                  - if comment.user.username?
+                    = link_to comment.user.username
+                  - else
+                    = link_to comment.user.email
+                '
+                = comment.content
+        
+

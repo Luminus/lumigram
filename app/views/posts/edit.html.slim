@@ -1,2 +1,12 @@
-h1 Posts#edit
-p Find me in app/views/posts/edit.html.slim
+.col-md-6.col-md-offset-3
+  .row
+    .panel.panel-default
+      .panel-heading
+        h1 Edit Post
+      .panel-body
+        / = image_tag @pin.image(:medium)
+        br
+        br
+        = render 'form'
+      .panel-footer
+        = link_to "Cancel", root_path, class: 'btn btn-default'
