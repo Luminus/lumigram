@@ -10,10 +10,7 @@
                     = image_tag comment.user.avatar(:thumb)
                     '
                     strong
-                      - if comment.user.username
-                        = link_to comment.user.username
-                      - else
-                        = link_to comment.user
+                      = link_to comment.user.username
                     '
                     = comment.comment
         p

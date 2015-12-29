@@ -4,10 +4,7 @@
       = image_tag @post.user.avatar(:thumb)
       '
       b
-        - if @post.user.username?
-          = link_to @post.user.username
-        - else
-          = link_to @post.user.email
+        = link_to @post.user.username
       .pull-right
         = time_ago_in_words(@post.created_at, { include_seconds: true })
         |  ago
@@ -40,10 +37,7 @@
         = pluralize @post.get_upvotes.size, "like"
       p 
         strong
-          - if @post.user.username?
-            = link_to @post.user.username
-          - else
-            = link_to @post.user.email
+          = link_to @post.user.username
         '
         = @post.comment
 
@@ -51,10 +45,11 @@
             - @post.comments.each do |comment|
               p
                 strong
-                  - if comment.user.username?
-                    = link_to comment.user.username
-                  - else
-                    = link_to comment.user.email
+                  = link_to comment.user.username
                 '
                 = comment.comment
+    .panel-footer
+      = link_to 'Edit Post', edit_post_path, class: 'btn btn-default'
+      '
+      = link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
       

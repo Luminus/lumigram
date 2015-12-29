@@ -16,5 +16,6 @@
 !/log/.keep
 /tmp
 
-Ignore image files
+Ignore image files (User avatars and Post images)
 /public/system/users/
+/public/system/posts/

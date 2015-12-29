@@ -26,3 +26,7 @@ group :development, :test do
   gem 'quiet_assets', '~> 1.1'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
