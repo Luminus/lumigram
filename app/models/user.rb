@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "50x50#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  validates_presence_of :username
+  validates :username, presence: true, uniqueness: { case_sensitive: false, message: "That username is already taken" }
   validates_presence_of :avatar
 end
