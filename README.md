@@ -1,4 +1,4 @@
-== README
+Lumigram App (Quick & Dirty Instagram Clone)
 
 So I decided to replicate the basic functions of the Instagram app using Ruby on Rails just for fun and some extra learning.
 
