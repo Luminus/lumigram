@@ -1,2 +1,23 @@
-h1 Comments#new
-p Find me in app/views/comments/new.html.slim
+.col-md-6.col-md-offset-3
+  .box.panel.panel-default
+    .panel-body  
+      #comments
+        - if @post.comments 
+            - @post.comments.each do |comment|
+              - if !comment.new_record?
+                p
+                  #avatar
+                    = image_tag comment.user.avatar(:thumb)
+                    '
+                    strong
+                      - if comment.user.username
+                        = link_to comment.user.username
+                      - else
+                        = link_to comment.user
+                    '
+                    = comment.comment
+        p
+      = simple_form_for [@post, Comment.new] do |f|
+        .field
+          = f.input :comment, label: false, placeholder: 'Add a comment...', class: 'form-control'
+          = f.submit "Add Comment", class: 'btn btn-primary'
