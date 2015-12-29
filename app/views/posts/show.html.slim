@@ -48,8 +48,9 @@
                   = link_to comment.user.username
                 '
                 = comment.comment
-    .panel-footer
-      = link_to 'Edit Post', edit_post_path, class: 'btn btn-default'
-      '
-      = link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+    - if @post.user == current_user
+      .panel-footer
+        = link_to 'Edit Post', edit_post_path, class: 'btn btn-default'
+        '
+        = link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
       

@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+So I decided to replicate the basic functions of the Instagram app using Ruby on Rails just for fun and some extra learning.
 
-Things you may want to cover:
+This was quick and dirty, so there were no tests, just me feeling my way through.
 
-* Ruby version
+I'm more developer than designer so I didn't pay too much mind to how things look. I went with good old Bootstrap to make things look acceptable and just relied on the Glyphicons that come with it instead of hunting for the perfect icons.
 
-* System dependencies
+Things that currently work:
 
-* Configuration
+* User Registration, Login & Account Update
 
-* Database creation
+* Creating, Editing & Deleting Posts
 
-* Database initialization
+* Liking & Unliking
 
-* How to run the test suite
+* Adding Comments
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Users need to be logged in to Post, Comment or Like
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Things that need to be done:
+
+* User Profiles that list each user's Posts
+
+* Editing & Deleting Comments
+
+* Following & Unfollowing
+
