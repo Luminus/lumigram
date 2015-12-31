@@ -1,0 +1,30 @@
+.col-md-9.col-md-offset-3
+  .col-md-3.col-md-pull-3
+    = image_tag @user.avatar(:medium), class: 'img-circle img-responsive'
+  .col-md-9
+    h1  = @user.username
+    h3 = @user.name
+    ul.list-inline
+      li
+        strong = @user.posts.count
+        '
+        = "post".pluralize(@user.posts.count)
+      li
+        strong 689
+        '
+          &nbsp; followers
+      li
+        strong 488
+        '
+          &nbsp; following
+p &nbsp;
+.clearfix
+  - @posts.each do |post|
+    .col-md-4
+      .panel
+        p = link_to image_tag(post.image(:medium), class: 'img-responsive'), post
+
+
+
+
+
