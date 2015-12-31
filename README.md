@@ -6,6 +6,8 @@ This was quick and dirty, so there were no tests, just me feeling my way through
 
 I'm more developer than designer so I didn't pay too much mind to how things look. I went with good old Bootstrap to make things look acceptable and just relied on the Glyphicons that come with it instead of hunting for the perfect icons.
 
+I also didn't bother with responsiveness.
+
 Things that currently work:
 
 * User Registration, Login & Account Update
@@ -18,10 +20,10 @@ Things that currently work:
 
 * Users need to be logged in to Post, Comment or Like
 
+* User Profiles that list each user's Posts
+
 
 Things that need to be done:
-
-* User Profiles that list each user's Posts
 
 * Editing & Deleting Comments
 
