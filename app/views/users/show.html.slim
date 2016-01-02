@@ -1,23 +1,26 @@
 .col-md-9.col-md-offset-3
-  .col-md-3.col-md-pull-3
-    = image_tag @user.avatar(:medium), class: 'img-circle img-responsive'
-  .col-md-9
-    h1  = @user.username
-    h3 = @user.name
-    ul.list-inline
-      li
-        strong = @user.posts.count
+  .row.user-header
+    .col-md-3.col-md-pull-3
+      = image_tag @user.avatar(:medium), class: 'img-circle img-responsive'
+    .col-md-9.col-md-pull-2
+      h1.username
+        = @user.username
         '
-        = "post".pluralize(@user.posts.count)
-      li
-        strong 689
-        '
-          &nbsp; followers
-      li
-        strong 488
-        '
-          &nbsp; following
-p &nbsp;
+        = link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-default text-uppercase'
+      h2.name = @user.name
+      ul.list-inline
+        li.user-data
+          strong = @user.posts.count
+          '
+          = "post".pluralize(@user.posts.count)
+        li.user-data
+          strong 689
+          '
+            &nbsp; followers
+        li.user-data
+          strong 488
+          '
+            &nbsp; following
 .clearfix
   - @posts.each do |post|
     .col-md-4

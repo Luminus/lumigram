@@ -17,6 +17,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+.body {
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
 #avatar img {
     border-radius: 30px;
     border: solid 2px lightgray;
@@ -28,4 +31,27 @@
 
 hr {
     margin-top: -1px;
+}
+
+.username {
+    font-size: 34px;
+    line-height: 40px;
+    color: #4b4f54;
+    font-weight: 300;
+}
+
+.name {
+    font-weight: 600;
+    color: #4b4f54;
+    line-height: 24px;
+    font-size: 17px;
+}
+
+.user-data {
+    font-size: 17px;
+    margin-right: 40px
+}
+
+.row.user-header {
+    margin: 20px 0;
 }
